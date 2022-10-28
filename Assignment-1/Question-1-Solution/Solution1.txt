@@ -1,632 +1,78 @@
 class Question1 {
-    static int height = 5;
-    static int width;
-
-    Question1() {
-    }
-
-    static int abs(int var0) {
-        return var0 < 0 ? -1 * var0 : var0;
-    }
-
-    static void printA() {
-        int var0 = width / 2;
-
-        for(int var1 = 0; var1 < height; ++var1) {
-            for(int var2 = 0; var2 <= width; ++var2) {
-                if (var2 != var0 && var2 != width - var0 && (var1 != height / 2 || var2 <= var0 || var2 >= width - var0)) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-            --var0;
-        }
-
-    }
-
-    static void printB() {
-        int var2 = height / 2;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < width; ++var1) {
-                if ((var0 == 0 || var0 == height - 1 || var0 == var2) && var1 < width - 2) {
-                    System.out.printf("*");
-                } else if (var1 == width - 2 && var0 != 0 && var0 != height - 1 && var0 != var2) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printC() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < height - 1; ++var1) {
-                if (var0 == 0 || var0 == height - 1) {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printD() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < height; ++var1) {
-                if ((var0 == 0 || var0 == height - 1) && var1 < height - 1) {
-                    System.out.printf("*");
-                } else if (var1 == height - 1 && var0 != 0 && var0 != height - 1) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printE() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 == 0 || var0 == height - 1 || var0 == height / 2 && var1 <= height / 2) {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printF() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 == 0 || var0 == height / 2 && var1 <= height / 2) {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printG() {
-        --width;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 < width; ++var1) {
-                if ((var0 == 0 || var0 == height - 1) && (var1 == 0 || var1 == width - 1)) {
-                    System.out.printf(" ");
-                } else if (var1 == 0) {
-                    System.out.printf("*");
-                } else if (var0 == 0 && var1 <= height) {
-                    System.out.printf("*");
-                } else if (var0 == height / 2 && var1 > height / 2) {
-                    System.out.printf("*");
-                } else if (var0 > height / 2 && var1 == width - 1) {
-                    System.out.printf("*");
-                } else if (var0 == height - 1 && var1 < width) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printH() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var1 != height - 1 && var0 != height / 2) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printI() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 != 0 && var0 != height - 1) {
-                    if (var1 == height / 2) {
-                        System.out.printf("*");
-                    } else {
-                        System.out.printf(" ");
-                    }
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printJ() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 == height - 1 && var1 > 0 && var1 < height - 1) {
-                    System.out.printf("*");
-                } else if ((var1 != height - 1 || var0 == height - 1) && (var0 <= height / 2 - 1 || var1 != 0 || var0 == height - 1)) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printK() {
-        int var2 = height / 2;
-        int var3 = var2;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 <= var2; ++var1) {
-                if (var1 == abs(var3)) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-            --var3;
-        }
-
-    }
-
-    static void printL() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 <= height; ++var1) {
-                if (var0 == height - 1) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printM() {
-        int var2 = 0;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 <= height; ++var1) {
-                if (var1 == height) {
-                    System.out.printf("*");
-                } else if (var1 != var2 && var1 != height - var2 - 1) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            if (var2 == height / 2) {
-                var2 = -99999;
-            } else {
-                ++var2;
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printN() {
-        int var2 = 0;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 <= height; ++var1) {
-                if (var1 == height) {
-                    System.out.printf("*");
-                } else if (var1 == var2) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            ++var2;
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printO() {
-        int var2 = height / 3;
-        int var3 = height / 2 + height / 5 + var2 + var2;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 <= var3; ++var1) {
-                if (var1 != var3 - abs(var2) && var1 != abs(var2)) {
-                    if ((var0 == 0 || var0 == height - 1) && var1 > abs(var2) && var1 < var3 - abs(var2)) {
-                        System.out.printf("*");
-                    } else {
-                        System.out.printf(" ");
-                    }
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            if (var2 != 0 && var0 < height / 2) {
-                --var2;
-            } else if (var0 >= height / 2 + height / 5) {
-                --var2;
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printP() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < height; ++var1) {
-                if ((var0 == 0 || var0 == height / 2) && var1 < height - 1) {
-                    System.out.printf("*");
-                } else if (var0 < height / 2 && var1 == height - 1 && var0 != 0) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printQ() {
-        printO();
-        int var2 = height;
-
-        for(int var0 = 0; var0 < height / 2; ++var0) {
-            for(int var1 = 0; var1 <= var2; ++var1) {
-                if (var1 == var2) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-            ++var2;
-        }
-
-    }
-
-    static void printR() {
-        int var2 = height / 2;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 < width; ++var1) {
-                if ((var0 == 0 || var0 == var2) && var1 < width - 2) {
-                    System.out.printf("*");
-                } else if (var1 == width - 2 && var0 != 0 && var0 != var2) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printS() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 != 0 && var0 != height / 2 && var0 != height - 1) {
-                    if (var0 < height / 2 && var1 == 0) {
-                        System.out.printf("*");
-                    } else if (var0 > height / 2 && var1 == height - 1) {
-                        System.out.printf("*");
-                    } else {
-                        System.out.printf(" ");
-                    }
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printT() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 == 0) {
-                    System.out.printf("*");
-                } else if (var1 == height / 2) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printU() {
-        for(int var0 = 0; var0 < height; ++var0) {
-            if (var0 != 0 && var0 != height - 1) {
-                System.out.printf("*");
-            } else {
-                System.out.printf(" ");
-            }
-
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 == height - 1 && var1 >= 0 && var1 < height - 1) {
-                    System.out.printf("*");
-                } else if (var1 == height - 1 && var0 != 0 && var0 != height - 1) {
-                    System.out.printf("*");
-                } else {
-                    System.out.printf(" ");
-                }
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printV() {
-        int var2 = 0;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 <= width; ++var1) {
-                if (var1 != var2 && var1 != width - var2 - 1) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            ++var2;
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printW() {
-        int var2 = height / 2;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            System.out.printf("*");
-
-            for(int var1 = 0; var1 <= height; ++var1) {
-                if (var1 == height) {
-                    System.out.printf("*");
-                } else if (var0 < height / 2 || var1 != var2 && var1 != height - var2 - 1) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            if (var0 >= height / 2) {
-                ++var2;
-            }
-
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printX() {
-        int var2 = 0;
-
-        for(int var0 = 0; var0 <= height; ++var0) {
-            for(int var1 = 0; var1 <= height; ++var1) {
-                if (var1 != var2 && var1 != height - var2) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            ++var2;
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printY() {
-        int var2 = 0;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 <= height; ++var1) {
-                if (var1 != var2 && (var1 != height - var2 || var0 > height / 2)) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            System.out.printf("\n");
-            if (var0 < height / 2) {
-                ++var2;
-            }
-        }
-
-    }
-
-    static void printZ() {
-        int var2 = height - 1;
-
-        for(int var0 = 0; var0 < height; ++var0) {
-            for(int var1 = 0; var1 < height; ++var1) {
-                if (var0 != 0 && var0 != height - 1 && var1 != var2) {
-                    System.out.printf(" ");
-                } else {
-                    System.out.printf("*");
-                }
-            }
-
-            --var2;
-            System.out.printf("\n");
-        }
-
-    }
-
-    static void printPattern(char var0) {
-        switch (var0) {
-            case 'A':
-                printA();
-                break;
-            case 'B':
-                printB();
-                break;
-            case 'C':
-                printC();
-                break;
-            case 'D':
-                printD();
-                break;
-            case 'E':
-                printE();
-                break;
-            case 'F':
-                printF();
-                break;
-            case 'G':
-                printG();
-                break;
-            case 'H':
-                printH();
-                break;
-            case 'I':
-                printI();
-                break;
-            case 'J':
-                printJ();
-                break;
-            case 'K':
-                printK();
-                break;
-            case 'L':
-                printL();
-                break;
-            case 'M':
-                printM();
-                break;
-            case 'N':
-                printN();
-                break;
-            case 'O':
-                printO();
-                break;
-            case 'P':
-                printP();
-                break;
-            case 'Q':
-                printQ();
-                break;
-            case 'R':
-                printR();
-                break;
-            case 'S':
-                printS();
-                break;
-            case 'T':
-                printT();
-                break;
-            case 'U':
-                printU();
-                break;
-            case 'V':
-                printV();
-                break;
-            case 'W':
-                printW();
-                break;
-            case 'X':
-                printX();
-                break;
-            case 'Y':
-                printY();
-                break;
-            case 'Z':
-                printZ();
-        }
-
-    }
-
-    public static void main(String[] var0) {
-        char var1 = 'I';
-        printPattern(var1);
-        char var2 = 'N';
-        printPattern(var2);
-        char var3 = 'E';
-        printPattern(var3);
-        char var4 = 'U';
-        printPattern(var4);
-        char var5 = 'R';
-        printPattern(var5);
-        char var6 = 'O';
-        printPattern(var6);
-        char var7 = 'N';
-        printPattern(var7);
-    }
-
-    static {
-        width = 2 * height - 1;
-    }
+    public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		int n = 8;
+		for(int i=0;i<=n;i++) 
+			{
+			//I letter
+				for(int j=0;j<=n;j++) 
+				{
+				if(i==0 || j==n/2 || i==n)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+				}
+				
+				System.out.print("   ");
+				//N letter
+				for(int j =0;j<=n;j++)
+				{
+					if(j==0||i==j || j==n)
+						System.out.print("*");
+					else
+						System.out.print(" ");
+				}
+				System.out.print("   ");
+				
+				//E letter
+				for(int j =0;j<=n;j++)
+				{
+					if(j==0||i==0&&j<=n/2 ||i==n/2&&j<=n/2 || i==n&&j<=n/2)
+						System.out.print("*");
+					else
+						System.out.print(" ");
+				}
+				System.out.print(" ");
+				//U letter
+				for(int j =0;j<=n;j++)
+				{
+					if(j==0&&i!=n||(j==3*n/4&&i!=n)||i==n&&j!=0&&j<3*n/4)
+						System.out.print("*");
+					else
+						System.out.print(" ");
+				}
+				System.out.print("   ");
+				//R letter
+				for(int j =0;j<=n;j++)
+				{
+					if(j==0 ||i==0&&j<3*n/4 ||j==3*n/4&&i<n/2 ||i-j==0&&j>=n/2&&i>=n/2||i==n/2&&j<3*n/4)
+						System.out.print("*");
+					else
+						System.out.print(" ");
+				}
+				System.out.print("   ");
+				//O letter
+				for(int j =0;j<=n;j++)
+				{
+					if((i==0&&j!=3*n/4&&j!=0&&j<3*n/4)||(j==3*n/4&&i!=0&&i!=n)||(i==n&&j<3*n/4&&j!=0)||(j==0&&i!=0&&i!=n))
+						System.out.print("*");
+					else
+						System.out.print(" ");
+				}
+				System.out.print("   ");
+				//N letter
+				for(int j =0;j<=n;j++)
+				{
+					if(j==0||i==j || j==n)
+						System.out.print("*");
+					else
+						System.out.print(" ");
+				}
+				System.out.print("   ");
+		System.out.println();
+			
+			
+	}
+}
 }
